@@ -1,0 +1,261 @@
+# depslib dependency file v1.0
+1702349114 source:c:\users\zahra\documents\hamta_sharif\hamta_sharif_ex\main.cpp
+	"CXXGraph.hpp"
+	<memory>
+
+1702279996 c:\users\zahra\documents\hamta_sharif\hamta_sharif_ex\cxxgraph.hpp
+	"CXXGraph/CXXGraphConfig.h"
+	"CXXGraph/Edge/DirectedEdge.hpp"
+	"CXXGraph/Edge/DirectedWeightedEdge.hpp"
+	"CXXGraph/Edge/Edge.hpp"
+	"CXXGraph/Edge/UndirectedEdge.hpp"
+	"CXXGraph/Edge/UndirectedWeightedEdge.hpp"
+	"CXXGraph/Edge/Weighted.hpp"
+	"CXXGraph/Graph/Graph.hpp"
+	"CXXGraph/Node/Node.hpp"
+	"CXXGraph/Partitioning/CoordinatedPartitionState.hpp"
+	"CXXGraph/Partitioning/CoordinatedRecord.hpp"
+	"CXXGraph/Partitioning/EBV.hpp"
+	"CXXGraph/Partitioning/EdgeBalancedVertexCut.hpp"
+	"CXXGraph/Partitioning/GreedyVertexCut.hpp"
+	"CXXGraph/Partitioning/HDRF.hpp"
+	"CXXGraph/Partitioning/Partition.hpp"
+	"CXXGraph/Partitioning/PartitionAlgorithm.hpp"
+	"CXXGraph/Partitioning/PartitionState.hpp"
+	"CXXGraph/Partitioning/PartitionStrategy.hpp"
+	"CXXGraph/Partitioning/Partitioner.hpp"
+	"CXXGraph/Partitioning/PartitionerThread.hpp"
+	"CXXGraph/Partitioning/PartitioningStats.hpp"
+	"CXXGraph/Partitioning/Record.hpp"
+
+1702279996 c:\users\zahra\documents\hamta_sharif\hamta_sharif_ex\cxxgraph\cxxgraphconfig.h
+
+1702279996 c:\users\zahra\documents\hamta_sharif\hamta_sharif_ex\cxxgraph\edge\directededge.hpp
+	"Edge.hpp"
+
+1702345245 c:\users\zahra\documents\hamta_sharif\hamta_sharif_ex\cxxgraph\edge\edge.hpp
+	<memory>
+	<optional>
+	<utility>
+	"../Node/Node.hpp"
+	"../Utility/id_t.hpp"
+
+1702346089 c:\users\zahra\documents\hamta_sharif\hamta_sharif_ex\cxxgraph\node\node.hpp
+	"../Utility/id_t.hpp"
+	<iomanip>
+	<iostream>
+
+1702279996 c:\users\zahra\documents\hamta_sharif\hamta_sharif_ex\cxxgraph\utility\id_t.hpp
+	<type_traits>
+
+1702279996 c:\users\zahra\documents\hamta_sharif\hamta_sharif_ex\cxxgraph\edge\directedweightededge.hpp
+	"DirectedEdge.hpp"
+	"Weighted.hpp"
+
+1702279996 c:\users\zahra\documents\hamta_sharif\hamta_sharif_ex\cxxgraph\edge\weighted.hpp
+
+1702279996 c:\users\zahra\documents\hamta_sharif\hamta_sharif_ex\cxxgraph\edge\undirectededge.hpp
+	"Edge.hpp"
+
+1702279996 c:\users\zahra\documents\hamta_sharif\hamta_sharif_ex\cxxgraph\edge\undirectedweightededge.hpp
+	"UndirectedEdge.hpp"
+	"Weighted.hpp"
+
+1702345323 c:\users\zahra\documents\hamta_sharif\hamta_sharif_ex\cxxgraph\graph\graph.hpp
+	<cstdio>
+	<limits.h>
+	<atomic>
+	<cmath>
+	<condition_variable>
+	<cstring>
+	<deque>
+	<fstream>
+	<functional>
+	<iostream>
+	<limits>
+	<list>
+	<map>
+	<memory>
+	<mutex>
+	<optional>
+	<queue>
+	<set>
+	<sstream>
+	<stack>
+	<string>
+	<thread>
+	<unordered_map>
+	<unordered_set>
+	<utility>
+	"../Edge/DirectedEdge.hpp"
+	"../Edge/DirectedWeightedEdge.hpp"
+	"../Edge/Edge.hpp"
+	"../Edge/UndirectedEdge.hpp"
+	"../Edge/UndirectedWeightedEdge.hpp"
+	"../Edge/Weighted.hpp"
+	"../Node/Node.hpp"
+	"../Partitioning/Partition.hpp"
+	"../Partitioning/PartitionAlgorithm.hpp"
+	"../Partitioning/Partitioner.hpp"
+	"../Partitioning/Utility/Globals.hpp"
+	"../Utility/ConstString.hpp"
+	"../Utility/ConstValue.hpp"
+	"../Utility/PointerHash.hpp"
+	"../Utility/Reader.hpp"
+	"../Utility/ThreadSafe.hpp"
+	"../Utility/TypeTraits.hpp"
+	"../Utility/Typedef.hpp"
+	"../Utility/Writer.hpp"
+	<zlib.h>
+
+1702348888 c:\users\zahra\documents\hamta_sharif\hamta_sharif_ex\cxxgraph\partitioning\partition.hpp
+	<list>
+	<memory>
+	<unordered_set>
+	"PartitioningStats.hpp"
+	"../Utility/Typedef.hpp"
+
+1702345671 c:\users\zahra\documents\hamta_sharif\hamta_sharif_ex\cxxgraph\partitioning\partitioningstats.hpp
+	<iostream>
+	"../Utility/Typedef.hpp"
+
+1702279996 c:\users\zahra\documents\hamta_sharif\hamta_sharif_ex\cxxgraph\utility\typedef.hpp
+	<fstream>
+	<map>
+	<memory>
+	<string>
+	<unordered_map>
+	<vector>
+	"ConstValue.hpp"
+	"PointerHash.hpp"
+	"id_t.hpp"
+
+1702279996 c:\users\zahra\documents\hamta_sharif\hamta_sharif_ex\cxxgraph\utility\constvalue.hpp
+	<limits>
+
+1702345876 c:\users\zahra\documents\hamta_sharif\hamta_sharif_ex\cxxgraph\utility\pointerhash.hpp
+	<memory>
+	<string>
+	"../Edge/DirectedEdge.hpp"
+	"../Edge/DirectedWeightedEdge.hpp"
+	"../Edge/Edge.hpp"
+	"../Edge/UndirectedEdge.hpp"
+	"../Edge/UndirectedWeightedEdge.hpp"
+	"../Edge/Weighted.hpp"
+	"../Node/Node.hpp"
+
+1702279996 c:\users\zahra\documents\hamta_sharif\hamta_sharif_ex\cxxgraph\partitioning\partitionalgorithm.hpp
+
+1702348999 c:\users\zahra\documents\hamta_sharif\hamta_sharif_ex\cxxgraph\partitioning\partitioner.hpp
+	<memory>
+	<vector>
+	"CoordinatedPartitionState.hpp"
+	"EBV.hpp"
+	"../Edge/Edge.hpp"
+	"EdgeBalancedVertexCut.hpp"
+	"GreedyVertexCut.hpp"
+	"HDRF.hpp"
+	"PartitionAlgorithm.hpp"
+	"PartitionStrategy.hpp"
+	"PartitionerThread.hpp"
+	"Utility/Globals.hpp"
+	"../Utility/Runnable.hpp"
+	"WeightBalancedLibra.hpp"
+
+1702345415 c:\users\zahra\documents\hamta_sharif\hamta_sharif_ex\cxxgraph\partitioning\coordinatedpartitionstate.hpp
+	<memory>
+	<mutex>
+	<set>
+	<vector>
+	"CoordinatedRecord.hpp"
+	"../Edge/Edge.hpp"
+	"PartitionState.hpp"
+	"Utility/Globals.hpp"
+	"Record.hpp"
+
+1702345427 c:\users\zahra\documents\hamta_sharif\hamta_sharif_ex\cxxgraph\partitioning\coordinatedrecord.hpp
+	<set>
+	"Record.hpp"
+	"../Utility/Typedef.hpp"
+
+1702279996 c:\users\zahra\documents\hamta_sharif\hamta_sharif_ex\cxxgraph\partitioning\record.hpp
+	<set>
+
+1702279996 c:\users\zahra\documents\hamta_sharif\hamta_sharif_ex\cxxgraph\partitioning\partitionstate.hpp
+	<memory>
+	"Record.hpp"
+
+1702348963 c:\users\zahra\documents\hamta_sharif\hamta_sharif_ex\cxxgraph\partitioning\utility\globals.hpp
+	<thread>
+	"../PartitionAlgorithm.hpp"
+
+1702345449 c:\users\zahra\documents\hamta_sharif\hamta_sharif_ex\cxxgraph\partitioning\ebv.hpp
+	<memory>
+	<chrono>
+	<unordered_map>
+	"../Edge/Edge.hpp"
+	"PartitionStrategy.hpp"
+	"Utility/Globals.hpp"
+
+1702345798 c:\users\zahra\documents\hamta_sharif\hamta_sharif_ex\cxxgraph\partitioning\partitionstrategy.hpp
+	"../Edge/Edge.hpp"
+	"PartitionState.hpp"
+
+1702345474 c:\users\zahra\documents\hamta_sharif\hamta_sharif_ex\cxxgraph\partitioning\edgebalancedvertexcut.hpp
+	<memory>
+	<chrono>
+	"../Edge/Edge.hpp"
+	"PartitionStrategy.hpp"
+	"Utility/Globals.hpp"
+
+1702345495 c:\users\zahra\documents\hamta_sharif\hamta_sharif_ex\cxxgraph\partitioning\greedyvertexcut.hpp
+	<memory>
+	<chrono>
+	<random>
+	"../Edge/Edge.hpp"
+	"PartitionStrategy.hpp"
+	"Utility/Globals.hpp"
+
+1702345522 c:\users\zahra\documents\hamta_sharif\hamta_sharif_ex\cxxgraph\partitioning\hdrf.hpp
+	<memory>
+	<chrono>
+	<random>
+	"../Edge/Edge.hpp"
+	"PartitionStrategy.hpp"
+	"Utility/Globals.hpp"
+
+1702345659 c:\users\zahra\documents\hamta_sharif\hamta_sharif_ex\cxxgraph\partitioning\partitionerthread.hpp
+	<list>
+	<vector>
+	"../Edge/Edge.hpp"
+	"PartitionState.hpp"
+	"PartitionStrategy.hpp"
+	"../Utility/Runnable.hpp"
+
+1702279996 c:\users\zahra\documents\hamta_sharif\hamta_sharif_ex\cxxgraph\utility\runnable.hpp
+
+1702345829 c:\users\zahra\documents\hamta_sharif\hamta_sharif_ex\cxxgraph\partitioning\weightbalancedlibra.hpp
+	<chrono>
+	"../Edge/Edge.hpp"
+	"PartitionStrategy.hpp"
+	"Utility/Globals.hpp"
+
+1702279996 c:\users\zahra\documents\hamta_sharif\hamta_sharif_ex\cxxgraph\utility\conststring.hpp
+
+1702279996 c:\users\zahra\documents\hamta_sharif\hamta_sharif_ex\cxxgraph\utility\reader.hpp
+
+1702279996 c:\users\zahra\documents\hamta_sharif\hamta_sharif_ex\cxxgraph\utility\threadsafe.hpp
+	<mutex>
+
+1702345921 c:\users\zahra\documents\hamta_sharif\hamta_sharif_ex\cxxgraph\utility\typetraits.hpp
+	<memory>
+	"../Edge/DirectedEdge.hpp"
+	"../Edge/DirectedWeightedEdge.hpp"
+	"../Edge/Edge.hpp"
+	"../Edge/UndirectedEdge.hpp"
+	"../Edge/UndirectedWeightedEdge.hpp"
+	"../Edge/Weighted.hpp"
+	"../Node/Node.hpp"
+
+1702279996 c:\users\zahra\documents\hamta_sharif\hamta_sharif_ex\cxxgraph\utility\writer.hpp
+
