@@ -23,7 +23,7 @@ void create_graph(int num_of_nodes, int min_weight_edges, int max_weight_edges)
     while(1)
     {
         num_of_edges = rand()% N;
-        if(num_of_edges > N/2)
+        if(num_of_edges > N/10)
             break;
     }
 
@@ -84,7 +84,7 @@ void create_graph(int num_of_nodes, int min_weight_edges, int max_weight_edges)
     }
 
     CXXGraph::Graph<int> graph(edgeSet);
-    auto res = graph.dijkstra(*node[1], *node[3]);
+    auto res = graph.dijkstra(*node[2], *node[3]);
 
     for(int i = 0; i<num_of_edges; i++)
     {
@@ -106,7 +106,7 @@ int main() {
   //  CXXGraph::UndirectedWeightedEdge<int> edge1(1, *node[0], *node[1], 2.0);
 
 
-   create_graph(50,12,20);
+   create_graph(5,12,20);
 /*
   CXXGraph::Node<int> *node[2];
   node[0] = new CXXGraph::Node<int>("0", 0);
