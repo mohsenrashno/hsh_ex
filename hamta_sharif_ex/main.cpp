@@ -1,8 +1,9 @@
 #include "CXXGraph.hpp"
-
 #include <memory>
 #include <string>
 #include <iostream>
+#include "include/darc-rpc.hpp"
+#include "msg_sample.hpp"
 
 using std::make_shared;
 using namespace std;
@@ -104,7 +105,13 @@ int main() {
 
 
   //  CXXGraph::UndirectedWeightedEdge<int> edge1(1, *node[0], *node[1], 2.0);
+	dc::socket_requirements::init();
 
+	// create rpc_server with message types
+	dc::rpc_server<msg_params, msg_result> server("127.0.0.1", 31311);
+
+
+	const uint16_t first[5] = { 1,2,3,4,5 };
 
    create_graph(5,12,20);
 /*
