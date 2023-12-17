@@ -169,7 +169,7 @@ int main() {
         if (!client.execute(first[i], &msg_in, &msg_out)) {
             return 1;
         }
-        printf("sum: %" PRIu16 "\n", msg_out.value1);
+        printf("sum_next: %" PRIu16 "\n", msg_out.value1);
         cout<<endl;
         i++;
     }
