@@ -155,7 +155,8 @@ int main() {
     msg_params msg_in;
     msg_result msg_out;
 
-    msg_in.a = number_of_deges;
+    msg_in.a = vertex;
+    msg_in.b = number_of_deges;
 
     uint8_t* buffer[100];
     //	msg_in.deserialize = "aaadfsdf";

@@ -2,95 +2,116 @@
 #include <memory>
 #include <string>
 #include <iostream>
-#include "include/darc-rpc.hpp"
-#include "msg_sample.hpp"
 
 using std::make_shared;
 using namespace std;
+int *cal_num_vertex_edges()
+{
+    int *temp=new int[2];
+            ifstream r;
+            r.open("number_of_edes.txt");
+            string temp_number_of_vertex;
+            string temp_number_of_edges;
+            while (r>>temp_number_of_vertex>>temp_number_of_edges)
+	{
+	    int tmp1=stoi(temp_number_of_vertex);
+	    int tmp2=stoi(temp_number_of_edges);
+	    temp[0]=tmp1;
+	    temp[1]=tmp2;
+	    r.close();
+	    return temp;
+	}
+}
 
-int** create_graph(int num_of_nodes, int min_weight_edges, int max_weight_edges)
+int **cal_list(int num_of_edges)
+{
+    int **list_edges_betweens_nodes=new int*[num_of_edges];
+    for(int i=0; i<num_of_edges; i++)
+    {
+        list_edges_betweens_nodes[i]=new int[3];
+    }
+            ifstream r;
+            r.open("final_graph.txt");
+            string node1;
+            string node2;
+            string weight_edge;
+            int i=0;
+            while (r>>node1>>node2>>weight_edge)
+	{
+	    if(i==num_of_edges)
+            break;
+	    int tmp1=stoi(node1);
+	    int tmp2=stoi(node2);
+	    int tmp3=stoi(weight_edge);
+	    list_edges_betweens_nodes[i][0]=tmp1;
+	    list_edges_betweens_nodes[i][1]=tmp2;
+	    list_edges_betweens_nodes[i][2]=tmp3;
+
+	   i++;
+	}
+	r.close();
+	 return list_edges_betweens_nodes;
+
+}
+
+void create_graph()
 {
 
 
-    // make edges of graph, my strategy is max n(n-1)/2 and min n/2.
-    // رویکرد من برای ساخت یال ها دراینجا این است که حداقل یال صفر نباشد و حداکثر هم مثل قاعده باشد
-    srand(time(0));
-    int N = (num_of_nodes*num_of_nodes-num_of_nodes)/2;
-    int num_of_edges = 0;
-    while(1)
+    int *temp1=cal_num_vertex_edges();
+    int num_of_nodes=temp1[0];
+    int num_of_edges=temp1[1];
+
+    CXXGraph::Node<int> *node[num_of_nodes];
+    for(int i = 0; i<num_of_nodes; i++)
     {
-        num_of_edges = rand()% N;
-        if(num_of_edges > N/10)
-            break;
+        node[i]= new CXXGraph::Node<int>(to_string(i), i);
     }
 
-
-   // int list_edges_betweens_nodes[num_of_edges][3];
-     int **list_edges_betweens_nodes;
-     int temp=num_of_edges+1;
-    list_edges_betweens_nodes= new int*[num_of_edges];
-    for(int i = 0; i<=num_of_edges; i++)
-    {
-        list_edges_betweens_nodes[i] = new int[3];
-    }
-    // sign for finish array
-    list_edges_betweens_nodes[num_of_edges][0]=-2;
+    int **list_edges_betweens_nodes=cal_list(num_of_edges);
     for(int i = 0; i<num_of_edges; i++)
     {
-        list_edges_betweens_nodes[i][0] = -1;
+        cout<<list_edges_betweens_nodes[i][0]<<" "<<list_edges_betweens_nodes[i][1]<<" "<<list_edges_betweens_nodes[i][2]<<endl;
     }
 
+    CXXGraph::UndirectedWeightedEdge<int> *edge[num_of_edges];
+    CXXGraph::T_EdgeSet<int> edgeSet;
 
     for(int i = 0; i<num_of_edges; i++)
     {
-        int node1=-1;
-        int node2=-1;
-        while(1)
-        {
-            bool verify = true;
-            bool empty_list = false;
-            while(1)
-            {
-                node1 = rand() % num_of_nodes ;
-                node2 = rand() % num_of_nodes ;
-                if(node1!=node2)
-                        break;
-            }
-
-            for(int i = 0; i<num_of_edges; i++)
-            {
-                if(list_edges_betweens_nodes[i][0]==-1)
-                {
-                    empty_list = true;
-                    break;
-                }
-
-                if((list_edges_betweens_nodes[i][0]==node1 && list_edges_betweens_nodes[i][1]==node2)||
-               (list_edges_betweens_nodes[i][0]==node2 && list_edges_betweens_nodes[i][1]==node1))
-                {
-                    verify = false;
-                    break;
-                }
-            }
-            if(empty_list)
-                break;
-        }
-
+/*
         list_edges_betweens_nodes[i][0] = node1;
         list_edges_betweens_nodes[i][1] = node2;
 
-        int random_wieght=0;
-        while(1)
-        {
-            random_wieght = (rand() % max_weight_edges);
-            if(random_wieght>=min_weight_edges)
-                break;
-        }
+        int random_wieght = min_weight_edges + (rand() % max_weight_edges);
         list_edges_betweens_nodes[i][2] = random_wieght;
+*/
+        edge[i] = new CXXGraph::UndirectedWeightedEdge<int>(i, *node[list_edges_betweens_nodes[i][0]], *node[list_edges_betweens_nodes[i][1]], list_edges_betweens_nodes[i][2]);
+        edgeSet.insert(make_shared<CXXGraph::UndirectedWeightedEdge<int>>(*edge[i]));
 
     }
 
+    CXXGraph::Graph<int> *grf;
+    grf=new CXXGraph::Graph<int>(edgeSet);
+    auto res= grf->dijkstra(*node[1], *node[3]);
+    std::cout << "--------------" <<"\n\n";
 
+
+    while(1)
+    {
+        cout<<"Calculate Dijkstra: "<<endl;
+        cout<<"Enter first node: ";
+        int a=0;
+        cin>>a;
+        cout<<endl;
+        cout<<"Enter seccond node: ";
+        int b=0;
+        cin>>b;
+        auto res= grf->dijkstra(*node[a], *node[b]);
+        std::cout << "Dijkstra Result: " << res.result << "\n";
+    }
+
+   // auto res = graph.dijkstra(*node[1], *node[3]);
 
 
     for(int i = 0; i<num_of_edges; i++)
@@ -98,15 +119,7 @@ int** create_graph(int num_of_nodes, int min_weight_edges, int max_weight_edges)
         std::cout << list_edges_betweens_nodes[i][0] <<" * " << list_edges_betweens_nodes[i][1] <<" * " << list_edges_betweens_nodes[i][2] <<endl;
     }
 
-    int i= 0;
-    while(list_edges_betweens_nodes[i][0]!=-2)
-    {
-        cout<<list_edges_betweens_nodes[i]<<" "<<list_edges_betweens_nodes[i][0]<<endl;
-        i++;
-    }
-      std::cout << "i: "<<i<<endl;
-
-       return list_edges_betweens_nodes;
+  //  std::cout << "Dijkstra Result: " << res.result << "\n";
 
 
 
@@ -114,17 +127,13 @@ int** create_graph(int num_of_nodes, int min_weight_edges, int max_weight_edges)
 
 int main() {
 
-
-
-
-
 	const uint16_t first[5] = { 1,2,3,4,5 };
 
-   int **graph=create_graph(5,12,20);
+	create_graph();
 
 
 
-    int i= 0;
+   /* int i= 0;
     while(graph[i][0]!=-2)
     {
        cout << graph[i][0] <<" * " << graph[i][1] <<" # " << graph[i][2] <<endl;

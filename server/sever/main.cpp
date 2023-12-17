@@ -33,9 +33,9 @@ int main()
 
 
     int a=0;
-    ofstream out;
-    out.open("final_graph.txt");
-    out.close();
+    ofstream w;
+    w.open("final_graph.txt");
+    w.close();
 
     //    });
     server.register_method(first[0], [](msg_params* input, msg_result* output) {
@@ -82,6 +82,9 @@ int main()
     }
 
     cout<<"Finish_While"<<endl;
+
+
+
 
 
     //        if(temp>1)
@@ -137,12 +140,12 @@ int main()
     //        });
 
     //   i++;
-    //        ifstream r;
-    //        r.open("number_of_edes.txt");
-    //        string temp_number_of_edges;
-    //        getline(r,temp_number_of_edges);
-    //        r.close();
-    //        int temp=stoi(temp_number_of_edges);
+//            ifstream r;
+//            r.open("number_of_edes.txt");
+//            string temp_number_of_edges;
+//            getline(r,temp_number_of_edges);
+//            r.close();
+//            int temp=stoi(temp_number_of_edges);
     //        cout<<"temp: "<<temp<<endl;
     //        temp--;
     //        ofstream w;
