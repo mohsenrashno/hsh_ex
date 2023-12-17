@@ -241,7 +241,6 @@ Makefile: ..\sever\sever.pro C:\Qt\Qt5.12.12\5.12.12\msvc2017\mkspecs\win32-msvc
 		C:\Qt\Qt5.12.12\5.12.12\msvc2017\mkspecs\features\qt_config.prf \
 		C:\Qt\Qt5.12.12\5.12.12\msvc2017\mkspecs\win32-msvc\qmake.conf \
 		C:\Qt\Qt5.12.12\5.12.12\msvc2017\mkspecs\features\spec_post.prf \
-		.qmake.stash \
 		C:\Qt\Qt5.12.12\5.12.12\msvc2017\mkspecs\features\exclusive_builds.prf \
 		C:\Qt\Qt5.12.12\5.12.12\msvc2017\mkspecs\common\msvc-version.conf \
 		C:\Qt\Qt5.12.12\5.12.12\msvc2017\mkspecs\features\toolchain.prf \
@@ -427,7 +426,6 @@ C:\Qt\Qt5.12.12\5.12.12\msvc2017\mkspecs\features\qt_functions.prf:
 C:\Qt\Qt5.12.12\5.12.12\msvc2017\mkspecs\features\qt_config.prf:
 C:\Qt\Qt5.12.12\5.12.12\msvc2017\mkspecs\win32-msvc\qmake.conf:
 C:\Qt\Qt5.12.12\5.12.12\msvc2017\mkspecs\features\spec_post.prf:
-.qmake.stash:
 C:\Qt\Qt5.12.12\5.12.12\msvc2017\mkspecs\features\exclusive_builds.prf:
 C:\Qt\Qt5.12.12\5.12.12\msvc2017\mkspecs\common\msvc-version.conf:
 C:\Qt\Qt5.12.12\5.12.12\msvc2017\mkspecs\features\toolchain.prf:

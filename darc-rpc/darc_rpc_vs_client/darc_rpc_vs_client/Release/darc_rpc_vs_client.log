@@ -1,10 +1,11 @@
-﻿  darc_rpc_vs_client.cpp
-c:\users\zahra\documents\programming\darc-rpc\darc_rpc_vs_client\darc_rpc_vs_client\darc_rpc_vs_client.cpp(23): warning C4305: '=': truncation from 'int' to 'uint8_t'
-c:\users\zahra\documents\programming\darc-rpc\darc_rpc_vs_client\darc_rpc_vs_client\darc_rpc_vs_client.cpp(23): warning C4309: '=': truncation of constant value
-c:\users\zahra\documents\programming\darc-rpc\darc_rpc_vs_client\darc_rpc_vs_client\darc_rpc_vs_client.cpp(27): warning C4101: 'buffer': unreferenced local variable
+﻿  pch.cpp
+  darc_rpc_vs_client.cpp
+c:\users\zahra\documents\hamta_sharif\darc-rpc\darc_rpc_vs_client\darc_rpc_vs_client\darc_rpc_vs_client.cpp(23): warning C4305: '=': truncation from 'int' to 'uint8_t'
+c:\users\zahra\documents\hamta_sharif\darc-rpc\darc_rpc_vs_client\darc_rpc_vs_client\darc_rpc_vs_client.cpp(23): warning C4309: '=': truncation of constant value
+c:\users\zahra\documents\hamta_sharif\darc-rpc\darc_rpc_vs_client\darc_rpc_vs_client\darc_rpc_vs_client.cpp(27): warning C4101: 'buffer': unreferenced local variable
   Generating code
-  1 of 98 functions ( 1.0%) were compiled, the rest were copied from previous compilation.
+  96 of 98 functions (98.0%) were compiled, the rest were copied from previous compilation.
     0 functions were new in current compilation
     0 functions had inline decision re-evaluated but remain unchanged
   Finished generating code
-  darc_rpc_vs_client.vcxproj -> C:\Users\zahra\Documents\Programming\darc-rpc\darc_rpc_vs_client\Release\darc_rpc_vs_client.exe
+  darc_rpc_vs_client.vcxproj -> C:\Users\zahra\Documents\Hamta_Sharif\darc-rpc\darc_rpc_vs_client\Release\darc_rpc_vs_client.exe
