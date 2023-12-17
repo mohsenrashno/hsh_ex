@@ -31,21 +31,8 @@ int main()
 
     const uint16_t M_SUM = 0x0000;
 
-    ofstream f;
-    f.open("number_of_edes.txt");
-    f<<0;
-    f.close();
 
     int a=0;
-    //    server.register_method(first[0], [](msg_params* input, msg_result* output) {
-    //        output->value1 = static_cast<uint16_t>(input->a) + static_cast<uint16_t>(input->a);
-    //        int b=input->a;
-    //        ofstream f;
-    //        f.open("number_of_edes.txt");
-    //        f<<b;
-    //        f.close();
-
-    //        //برای اینکه از اول فایل را باز کند این را نوشتیم
     ofstream out;
     out.open("final_graph.txt");
     out.close();
@@ -59,123 +46,112 @@ int main()
         f<<b;
         f.close();
 
-        ofstream r1;
-        r1.open("check.txt");
-        r1.close();
     });
 
     int i=1;
 
     // مرحله حلقه انتقال
-    while (1) {
+    while (i<25) {
 
 
+        server.register_method(first[i], [](msg_params* input, msg_result* output) {
+            output->value1 = static_cast<uint16_t>(input->a) + static_cast<uint16_t>(input->a);
+            int in1=input->a;
+            int in2=input->b;
+            int in3=input->c;
+            cout<<endl;
+            cout << in1<<"  "<<in2<<"  "<<in3;
 
-        ifstream r;
-        r.open("number_of_edes.txt");
-        string temp_number_of_edges;
-        getline(r,temp_number_of_edges);
-        r.close();
-        int temp=stoi(temp_number_of_edges);
-        cout<<"int temp1"<<temp<<endl;
-        if(exists_test0("check.txt"))
-        {
-            server.register_method(first[i], [](msg_params* input, msg_result* output) {
-                output->value1 = static_cast<uint16_t>(input->a) + static_cast<uint16_t>(input->a);
-                int b=input->a;
+            string ins1 = to_string(in1);
+            string ins2 = to_string(in2);
+            string ins3 = to_string(in3);
 
-                ifstream r;
-                r.open("number_of_edes.txt");
-                string temp_number_of_edges;
-                getline(r,temp_number_of_edges);
-                r.close();
-                int temp=stoi(temp_number_of_edges);
-                temp--;
-                cout<<"int temp2"<<temp<<endl;
-                ofstream w;
-                w.open("number_of_edes.txt");
-                w <<temp<<endl;
-                w.close();
-                ofstream out;
-                out.open("final_graph.txt", std::ios::app);
-                out <<4<<endl;
-                out.close();
+            string str1=ins1.append(" ");
+            string str2=ins2.append(" ");
+            string str3=str1.append(str2);
+            string final=str3.append(ins3);
 
-            });
-        }
-        //        if(temp>1)
-        //        {
-        //            cout<<"int temp=stoi(temp_number_of_edges);"<<temp<<endl;
-        //            server.register_method(first[i], [](msg_params* input, msg_result* output) {
-        //                output->value1 = static_cast<uint16_t>(input->a) + static_cast<uint16_t>(input->a);
-        //                int b=input->a;
-        //                ofstream out;
-        //                out.open("final_graph.txt", std::ios::app);
-        //                out <<4<<endl;
-        //                out.close();
+            ofstream out;
+            out.open("final_graph.txt", std::ios::app);
+            out <<final<<endl;
+            out.close();
 
-        //                ifstream r;
-        //                r.open("number_of_edes.txt");
-        //                string temp_number_of_edges;
-        //                getline(r,temp_number_of_edges);
-        //                r.close();
-        //                int temp=stoi(temp_number_of_edges);
-        //                //cout<<"temp: "<<temp<<endl;
-        //                temp--;
-        //                ofstream w;
-        //                w.open("number_of_edes.txt");
-        //                w <<temp<<endl;
-        //                w.close();
-        //            });
-        //        }
+        });
 
-
-        //        server.register_method(first[i], [](msg_params* input, msg_result* output) {
-        //            ifstream r;
-        //            r.open("number_of_edes.txt");
-        //            string temp_number_of_edges;
-        //            getline(r,temp_number_of_edges);
-        //            r.close();
-        //            int temp=stoi(temp_number_of_edges);
-        //            cout<<"temp: "<<temp<<endl;
-        //            temp--;
-        //            ofstream w;
-        //            w.open("number_of_edes.txt");
-        //            w <<temp<<endl;
-        //            w.close();
-        //            if(temp<1)
-        //                return 0;
-
-        //            output->value1 = static_cast<uint16_t>(input->a) + static_cast<uint16_t>(input->a);
-        //            int b=input->a;
-        //            ofstream out;
-        //            out.open("final_graph.txt", std::ios::app);
-        //            out <<b<<endl;
-        //            out.close();
-
-        //        });
-
-        //   i++;
-        //        ifstream r;
-        //        r.open("number_of_edes.txt");
-        //        string temp_number_of_edges;
-        //        getline(r,temp_number_of_edges);
-        //        r.close();
-        //        int temp=stoi(temp_number_of_edges);
-        //        cout<<"temp: "<<temp<<endl;
-        //        temp--;
-        //        ofstream w;
-        //        w.open("number_of_edes.txt");
-        //        w <<temp<<endl;
-        //        w.close();
-        //        if(temp<1)
-        //            break;
         i++;
-        if(i>5)
-            break;
     }
 
     cout<<"Finish_While"<<endl;
+
+
+    //        if(temp>1)
+    //        {
+    //            cout<<"int temp=stoi(temp_number_of_edges);"<<temp<<endl;
+    //            server.register_method(first[i], [](msg_params* input, msg_result* output) {
+    //                output->value1 = static_cast<uint16_t>(input->a) + static_cast<uint16_t>(input->a);
+    //                int b=input->a;
+    //                ofstream out;
+    //                out.open("final_graph.txt", std::ios::app);
+    //                out <<4<<endl;
+    //                out.close();
+
+    //                ifstream r;
+    //                r.open("number_of_edes.txt");
+    //                string temp_number_of_edges;
+    //                getline(r,temp_number_of_edges);
+    //                r.close();
+    //                int temp=stoi(temp_number_of_edges);
+    //                //cout<<"temp: "<<temp<<endl;
+    //                temp--;
+    //                ofstream w;
+    //                w.open("number_of_edes.txt");
+    //                w <<temp<<endl;
+    //                w.close();
+    //            });
+    //        }
+
+
+    //        server.register_method(first[i], [](msg_params* input, msg_result* output) {
+    //            ifstream r;
+    //            r.open("number_of_edes.txt");
+    //            string temp_number_of_edges;
+    //            getline(r,temp_number_of_edges);
+    //            r.close();
+    //            int temp=stoi(temp_number_of_edges);
+    //            cout<<"temp: "<<temp<<endl;
+    //            temp--;
+    //            ofstream w;
+    //            w.open("number_of_edes.txt");
+    //            w <<temp<<endl;
+    //            w.close();
+    //            if(temp<1)
+    //                return 0;
+
+    //            output->value1 = static_cast<uint16_t>(input->a) + static_cast<uint16_t>(input->a);
+    //            int b=input->a;
+    //            ofstream out;
+    //            out.open("final_graph.txt", std::ios::app);
+    //            out <<b<<endl;
+    //            out.close();
+
+    //        });
+
+    //   i++;
+    //        ifstream r;
+    //        r.open("number_of_edes.txt");
+    //        string temp_number_of_edges;
+    //        getline(r,temp_number_of_edges);
+    //        r.close();
+    //        int temp=stoi(temp_number_of_edges);
+    //        cout<<"temp: "<<temp<<endl;
+    //        temp--;
+    //        ofstream w;
+    //        w.open("number_of_edes.txt");
+    //        w <<temp<<endl;
+    //        w.close();
+    //        if(temp<1)
+    //            break;
+
 
 
 

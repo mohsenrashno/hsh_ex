@@ -125,14 +125,14 @@ int main() {
     dc::rpc_client client("127.0.0.1", 31311);
 
     if (client.connect()) {
-        //   cout<<"Established Connection..."<<endl;
-        //        cout<<"Please enter number of Vertex: ";
-        //        cin>>vertex;
-        //        cout<<endl<<"Please enter Min Wieght of Edges: ";
-        //        cin>>min_weight;
-        //        cout<<endl<<"Please enter Max Wieght of Edges: ";
-        //        cin>>max_weight;
-        //        graph=create_graph(vertex,min_weight,max_weight);
+        cout<<"Established Connection..."<<endl;
+        cout<<"Please enter number of Vertex: ";
+        cin>>vertex;
+        cout<<endl<<"Please enter Min Wieght of Edges: ";
+        cin>>min_weight;
+        cout<<endl<<"Please enter Max Wieght of Edges: ";
+        cin>>max_weight;
+        graph=create_graph(vertex,min_weight,max_weight);
 
     }
     else
@@ -140,19 +140,22 @@ int main() {
         return 1;
     }
 
-    //    int number_of_deges= 0;
-    //    while(graph[number_of_deges][0]!=-2)
-    //    {
-    //        cout << graph[number_of_deges][0] <<" # " << graph[number_of_deges][1] <<" # " << graph[number_of_deges][2] <<endl;
-    //        number_of_deges++;
-    //    }
+    int number_of_deges= 0;
+    while(graph[number_of_deges][0]!=-2)
+    {
+        cout << graph[number_of_deges][0] <<" # " << graph[number_of_deges][1] <<" # " << graph[number_of_deges][2] <<endl;
+        number_of_deges++;
+        cout<<"number_of_deges: "<<number_of_deges<<endl;
+    }
     const uint16_t M_SUM = 0x0000;
 
-
+    cout<<"Final: "<<number_of_deges<<endl;
+    //    int a=0;
+    //    cin>>a;
     msg_params msg_in;
     msg_result msg_out;
 
-    msg_in.a = 5;
+    msg_in.a = number_of_deges;
 
     uint8_t* buffer[100];
     //	msg_in.deserialize = "aaadfsdf";
@@ -162,17 +165,24 @@ int main() {
     printf("sum: %" PRIu16 "\n", msg_out.value1);
 
 
-    int i=1;
-    while(i<5)
+    int i=0;
+    while(i<25)
     {
-        msg_in.a = 12+i;
-        if (!client.execute(first[i], &msg_in, &msg_out)) {
+        msg_in.a =  graph[i][0];
+        msg_in.b =  graph[i][1];
+        msg_in.c =  graph[i][2];
+        int j=i+1;
+        if (!client.execute(first[j], &msg_in, &msg_out)) {
             return 1;
         }
         printf("sum_next: %" PRIu16 "\n", msg_out.value1);
         cout<<endl;
         i++;
     }
+
+
+    int a= 0;
+    cin>>a;
 
 
     //    if (!client.execute(first[1], &msg_in, &msg_out)) {
